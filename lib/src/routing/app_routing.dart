@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:todoapp/src/features/splash/presentation/splash_screen.dart';
-import 'package:todoapp/src/features/todo/presentation/task_home_screen.dart';
+import 'package:todoapp/src/features/todo/presentation/pages/task_home_screen.dart';
 
 class AppRouter {
   final GoRouter goRouter;
