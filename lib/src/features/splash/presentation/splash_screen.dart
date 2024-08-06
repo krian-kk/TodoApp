@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 2), () => context.go('/taskHome'));
+    Timer(const Duration(milliseconds: 400), () => context.go('/taskHome'));
   }
 
   @override
