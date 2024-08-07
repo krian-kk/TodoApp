@@ -30,4 +30,22 @@ class TaskRepositoryImpl implements TaskRepository {
         id: task.id, title: task.title, isCompleted: task.isCompleted);
     await taskDB.insertTask(taskModel);
   }
+
+  @override
+  Future<void> deleteTask(int id) async {
+    await taskDB.deleteTask(id);
+  }
+
+  @override
+  Future<void> updateTask(Task task) async {
+    int isCompleted = -1;
+    if (task.isCompleted == 0) {
+      isCompleted = 1;
+    } else {
+      isCompleted = 0;
+    }
+    final taskModel =
+        TaskModel(id: task.id, title: task.title, isCompleted: isCompleted);
+    await taskDB.updateTask(taskModel);
+  }
 }

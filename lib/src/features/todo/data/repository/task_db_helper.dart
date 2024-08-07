@@ -57,4 +57,15 @@ class TaskDBHelper {
     final db = await instance.database;
     await db.insert('tasks', task.toJson());
   }
+
+  Future<void> deleteTask(int id) async {
+    final db = await instance.database;
+    await db.delete('tasks', where: 'id = ?', whereArgs: [id]);
+  }
+
+  Future<void> updateTask(TaskModel task) async {
+    final db = await instance.database;
+    await db
+        .update('tasks', task.toJson(), where: 'id = ?', whereArgs: [task.id]);
+  }
 }
