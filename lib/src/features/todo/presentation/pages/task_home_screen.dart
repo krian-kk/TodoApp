@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:todoapp/src/features/todo/bloc/add_task_bloc/add_task_bloc.dart';
+import 'package:todoapp/src/features/todo/bloc/delete_task_bloc/delete_task_bloc.dart';
 import 'package:todoapp/src/features/todo/bloc/get_task_bloc/get_task_bloc.dart';
 import 'package:todoapp/src/features/todo/domain/entities/task.dart';
 import 'package:todoapp/src/features/todo/presentation/widgets/filter_widget.dart';
@@ -21,7 +23,6 @@ class _TaskHomeScreenState extends State<TaskHomeScreen> {
     context
         .read<GetTasksBloc>()
         .add(LoadTasksRequested(selectedFilter: selectedFilter));
-    setState(() {});
   }
 
   @override
@@ -37,25 +38,33 @@ class _TaskHomeScreenState extends State<TaskHomeScreen> {
           const SizedBox(
             height: 32,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              FilterButton(
-                label: "All",
-                isSelected: selectedFilter == "All",
-                onTap: () => updateFilter("All"),
-              ),
-              FilterButton(
-                label: "Pending",
-                isSelected: selectedFilter == "Pending",
-                onTap: () => updateFilter("Pending"),
-              ),
-              FilterButton(
-                label: "Completed",
-                isSelected: selectedFilter == "Completed",
-                onTap: () => updateFilter("Completed"),
-              ),
-            ],
+          BlocBuilder(
+            buildWhen: (previous, current) {
+              return current is UpdateTaskHeaderSuccess;
+            },
+            bloc: context.read<GetTasksBloc>(),
+            builder: (context, state) {
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  FilterButton(
+                    label: "All",
+                    isSelected: selectedFilter == "All",
+                    onTap: () => updateFilter("All"),
+                  ),
+                  FilterButton(
+                    label: "Pending",
+                    isSelected: selectedFilter == "Pending",
+                    onTap: () => updateFilter("Pending"),
+                  ),
+                  FilterButton(
+                    label: "Completed",
+                    isSelected: selectedFilter == "Completed",
+                    onTap: () => updateFilter("Completed"),
+                  ),
+                ],
+              );
+            },
           ),
           const SizedBox(height: 16),
           BlocBuilder<GetTasksBloc, GetTasksState>(
@@ -68,8 +77,10 @@ class _TaskHomeScreenState extends State<TaskHomeScreen> {
               } else if (state is GetTasksSuccess) {
                 int length = state.tasks.length;
                 if (length == 0) {
-                  return const Center(
-                    child: Text("No Tasks found"),
+                  return const Expanded(
+                    child: Center(
+                      child: Text("No Tasks found"),
+                    ),
                   );
                 } else {
                   return Expanded(
@@ -77,7 +88,20 @@ class _TaskHomeScreenState extends State<TaskHomeScreen> {
                       itemCount: state.tasks.length,
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
-                        return TaskWidget(task: state.tasks[index]);
+                        return BlocProvider.value(
+                            value: BlocProvider.of<DeleteTaskBloc>(context),
+                            child: TaskWidget(
+                                task: state.tasks[index],
+                                deleteCallback: () {
+                                  context.read<GetTasksBloc>().add(
+                                      LoadTasksRequested(
+                                          selectedFilter: selectedFilter));
+                                },
+                                toggleMarkCallback: () {
+                                  context.read<GetTasksBloc>().add(
+                                      LoadTasksRequested(
+                                          selectedFilter: selectedFilter));
+                                }));
                       },
                     ),
                   );
@@ -98,6 +122,7 @@ class _TaskHomeScreenState extends State<TaskHomeScreen> {
     ));
   }
 
+  ///pop up to add new task.
   Future<void> _showAddTaskDialog(BuildContext mContext) async {
     final taskController = TextEditingController();
     await showDialog(
@@ -106,12 +131,12 @@ class _TaskHomeScreenState extends State<TaskHomeScreen> {
         title: const Text('Add Task'),
         content: TextField(
           controller: taskController,
-          decoration: const InputDecoration(hintText: 'Enter task title'),
+          decoration: const InputDecoration(hintText: 'Enter task detail'),
         ),
         actions: [
           TextButton(
             onPressed: () {
-              Navigator.of(context).pop();
+              context.pop();
             },
             child: const Text('Cancel'),
           ),
@@ -125,7 +150,7 @@ class _TaskHomeScreenState extends State<TaskHomeScreen> {
                     isCompleted: 0);
                 mContext.read<AddTaskBloc>().add(AddTaskEvent(task));
               }
-              Navigator.of(mContext).pop();
+              mContext.pop();
               if (mounted) {
                 mContext
                     .read<GetTasksBloc>()
