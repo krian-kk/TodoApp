@@ -24,7 +24,7 @@ void main() {
       when(mockDeleteTask(any)).thenAnswer((_) async => {});
       return deleteTaskBloc;
     },
-    act: (bloc) => bloc.add(DeleteTaskEvent(1)),
+    act: (bloc) => bloc.add(const DeleteTaskEvent(1)),
     expect: () => [TaskDeleted()],
   );
 }
