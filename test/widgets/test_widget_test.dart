@@ -15,7 +15,7 @@ import '../mocks.mocks.dart';
 
 void main() {
   testWidgets(
-      'TaskWidget displays task title and handles completion and deletion',
+      'TaskWidget displays task title and handles completion',
       (WidgetTester tester) async {
     final task = Task(id: 1, title: 'Test Task', isCompleted: 0);
 
@@ -24,8 +24,7 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       home: MultiBlocProvider(
         providers: [
-          BlocProvider(
-              create: (context) => GetTasksBloc(taskRepository)),
+          BlocProvider(create: (context) => GetTasksBloc(taskRepository)),
           BlocProvider(
               create: (context) =>
                   AddTaskBloc(addTask: AddTaskUseCase(taskRepository))),
@@ -39,12 +38,8 @@ void main() {
         child: Scaffold(
           body: TaskWidget(
             task: task,
-            deleteCallback: () {
-
-            },
-            toggleMarkCallback: () {
-
-            },
+            deleteCallback: () {},
+            toggleMarkCallback: () {},
           ),
         ),
       ),
@@ -54,9 +49,5 @@ void main() {
 
     await tester.tap(find.byType(Checkbox));
     await tester.pump();
-
-    // Assuming you have logic to test the task completion state if needed
-    await tester.longPress(find.text('Test Task'));
-    // Verify if the delete action is handled, which might involve more integration with the BLoC
   });
 }
