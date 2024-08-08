@@ -8,11 +8,11 @@ part 'get_task_state.dart';
 part "get_task_event.dart";
 
 class GetTasksBloc extends Bloc<GetTasksEvent, GetTasksState> {
-  final GetTasks getTasksUseCase;
+  final GetTasksUseCase getTasksUseCase;
   final TaskRepository taskRepository;
 
   GetTasksBloc(this.taskRepository)
-      : getTasksUseCase = GetTasks(taskRepository),
+      : getTasksUseCase = GetTasksUseCase(taskRepository),
         super(GetTasksInitial()) {
     on<GetTasksEvent>((event, emit) async {
       if (event is LoadTasksRequested) {

@@ -59,8 +59,9 @@ class _FakeTaskDBHelper_1 extends _i1.SmartFake implements _i3.TaskDBHelper {
         );
 }
 
-class _FakeGetTasks_2 extends _i1.SmartFake implements _i4.GetTasks {
-  _FakeGetTasks_2(
+class _FakeGetTasksUseCase_2 extends _i1.SmartFake
+    implements _i4.GetTasksUseCase {
+  _FakeGetTasksUseCase_2(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -231,13 +232,13 @@ class MockGetTasksBloc extends _i1.Mock implements _i5.GetTasksBloc {
   }
 
   @override
-  _i4.GetTasks get getTasksUseCase => (super.noSuchMethod(
+  _i4.GetTasksUseCase get getTasksUseCase => (super.noSuchMethod(
         Invocation.getter(#getTasksUseCase),
-        returnValue: _FakeGetTasks_2(
+        returnValue: _FakeGetTasksUseCase_2(
           this,
           Invocation.getter(#getTasksUseCase),
         ),
-      ) as _i4.GetTasks);
+      ) as _i4.GetTasksUseCase);
 
   @override
   _i2.TaskRepository get taskRepository => (super.noSuchMethod(
