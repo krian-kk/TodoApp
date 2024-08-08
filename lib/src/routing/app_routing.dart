@@ -12,6 +12,7 @@ import 'package:todoapp/src/features/todo/domain/usecase/delete_usecase.dart';
 import 'package:todoapp/src/features/todo/domain/usecase/update_task_usecase.dart';
 import 'package:todoapp/src/features/todo/presentation/pages/task_home_screen.dart';
 
+/// Using go_router to manage routes. Initial location of route is SplashScreen
 class AppRouter {
   final GoRouter goRouter;
 
