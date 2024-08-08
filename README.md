@@ -7,6 +7,7 @@ In this Flutter project, user can add a new task, mark task as completed, delete
 - [Running Tests](https://github.com/krian-kk/TodoApp/tree/main?tab=readme-ov-file#running-tests)
 - [Architecture & Project Structure](https://github.com/krian-kk/TodoApp/tree/main?tab=readme-ov-file#architecture--project-structure)
 - [State Management](https://github.com/krian-kk/TodoApp/tree/main?tab=readme-ov-file#state-management)
+- [Running Demo](https://github.com/krian-kk/TodoApp?tab=readme-ov-file#running-demo)
 
 ## Getting Started
 
