@@ -149,6 +149,9 @@ class _TaskHomeScreenState extends State<TaskHomeScreen> {
                     title: taskTitle,
                     isCompleted: 0);
                 mContext.read<AddTaskBloc>().add(AddTaskEvent(task));
+              } else {
+                _showSnackBar(mContext);
+                return;
               }
               mContext.pop();
               if (mounted) {
@@ -162,5 +165,14 @@ class _TaskHomeScreenState extends State<TaskHomeScreen> {
         ],
       ),
     );
+  }
+
+  void _showSnackBar(BuildContext context) {
+    const snackBar = SnackBar(
+      content: Text('Please enter task description'),
+      behavior: SnackBarBehavior.floating,
+      duration: Duration(milliseconds: 500),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }
