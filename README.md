@@ -10,14 +10,16 @@ To run this project make sure latest version of flutter sdk has been installed i
 git clone https://github.com/krian-kk/TodoApp.git
 ```
 
+### Running the app
+
 Open the appropriate android emulator or ios simulator to run the project
 
-For Running in Android, use the instructions below:
+For Running app in **Android**, use the instructions below:
 ```
 flutter run
 ```
 
-For Running in iOS, use the instructions below:
+For Running app in **iOS**, use the instructions below:
 
 To run the project in the iOS simulator, make sure that cocoapods is installed in the system and run the following commands
 
@@ -27,7 +29,7 @@ pod install
 flutter run
 ```
 
-## Running Tests
+### Running Tests
 
 To run the test files project needs to generate the mock dependency files, to generate the mock files run the below command first:
 
