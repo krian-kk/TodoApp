@@ -5,6 +5,7 @@ void main() {
   runApp(const MyApp());
 }
 
+///using go_router for configuring routes
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
