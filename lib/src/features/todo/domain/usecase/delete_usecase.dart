@@ -1,5 +1,4 @@
 import 'package:todoapp/src/features/todo/data/repository/task_repository.dart';
-import 'package:todoapp/src/features/todo/domain/entities/task.dart';
 
 class DeleteTaskUseCase {
   final TaskRepository repository;
