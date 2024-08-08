@@ -1,6 +1,6 @@
 # Todoapp
 
-In this Flutter project, user can add a new task, mark task as completed, delete the task and filter the tasks as Pending or Completed.
+In this Flutter project, user can add a new task, mark task as completed, delete the task and filter the tasks as Pending or Completed. Project is using sqflite database to save tasks and bloc to manage the app state.
 
 - [Getting Started](https://github.com/krian-kk/TodoApp/tree/main?tab=readme-ov-file#getting-started)
 - [Running the app](https://github.com/krian-kk/TodoApp/tree/main?tab=readme-ov-file#running-the-app)
@@ -76,4 +76,4 @@ For this project we are using feature first project structure. Click [here](http
 This project is using BLOC state managment framework to manages events and states in the app. Click [here](https://bloclibrary.dev/) for more details regarding bloc.
 
 ### Running Demo:
-![](/screenshots/todo_demo_1.gif)
+![](/screenshots/todo_demo.gif)
