@@ -11,6 +11,8 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
+  /// after 400 milliseconds app will route to TaskHomeScreen
   @override
   void initState() {
     super.initState();
