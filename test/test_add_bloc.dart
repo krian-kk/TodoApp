@@ -8,10 +8,10 @@ import 'mocks.mocks.dart';
 
 void main() {
   late AddTaskBloc addTaskBloc;
-  late MockAddTask mockAddTask;
+  late MockAddTaskUseCase mockAddTask;
 
   setUp(() {
-    mockAddTask = MockAddTask();
+    mockAddTask = MockAddTaskUseCase();
     addTaskBloc = AddTaskBloc(addTask: mockAddTask);
   });
 
