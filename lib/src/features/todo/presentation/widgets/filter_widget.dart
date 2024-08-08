@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
+///A Widget to show task filters such as ALL, Pending & Completed Tasks.
 class FilterButton extends StatelessWidget {
   final String label;
   final bool isSelected;
