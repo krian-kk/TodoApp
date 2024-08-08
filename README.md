@@ -8,7 +8,6 @@ To run this project make sure latest version of flutter sdk has been installed i
 
 ```
 git clone https://github.com/krian-kk/TodoApp.git
-
 ```
 
 Open the appropriate android emulator or ios simulator to run the project
@@ -16,7 +15,6 @@ Open the appropriate android emulator or ios simulator to run the project
 For Running in Android, use the instructions below:
 ```
 flutter run
-
 ```
 
 For Running in iOS, use the instructions below:
