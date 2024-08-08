@@ -11,7 +11,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   /// after 400 milliseconds app will route to TaskHomeScreen
   @override
   void initState() {
@@ -27,7 +26,14 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return const SafeArea(
       child: Scaffold(
-        body: Center(child: Text("Todo App")),
+        body: Center(
+            child: Text(
+          "Todo App",
+          style: TextStyle(
+              color: Colors.deepPurple,
+              fontWeight: FontWeight.w800,
+              fontSize: 24),
+        )),
       ),
     );
   }
