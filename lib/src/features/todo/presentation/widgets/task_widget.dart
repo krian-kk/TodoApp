@@ -31,7 +31,7 @@ class TaskWidget extends StatelessWidget {
         },
       ),
       trailing: IconButton(
-        icon: Icon(Icons.delete),
+        icon: const Icon(Icons.delete),
         onPressed: () {
           context.read<DeleteTaskBloc>().add(DeleteTaskEvent(task.id));
           deleteCallback();
