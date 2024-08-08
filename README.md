@@ -2,6 +2,12 @@
 
 In this Flutter project, user can add a new task, mark task as completed, delete the task and filter the tasks as Pending or Completed.
 
+- [Getting Started](https://github.com/krian-kk/TodoApp/tree/main?tab=readme-ov-file#getting-started)
+- [Running the app](https://github.com/krian-kk/TodoApp/tree/main?tab=readme-ov-file#running-the-app)
+- [Running Tests](https://github.com/krian-kk/TodoApp/tree/main?tab=readme-ov-file#running-tests)
+- [Architecture & Project Structure](https://github.com/krian-kk/TodoApp/tree/main?tab=readme-ov-file#architecture--project-structure)
+- [State Management](https://github.com/krian-kk/TodoApp/tree/main?tab=readme-ov-file#state-management)
+
 ## Getting Started
 
 To run this project make sure latest version of flutter sdk has been installed in the system and run the following commands.
