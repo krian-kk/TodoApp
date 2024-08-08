@@ -76,4 +76,4 @@ For this project we are using feature first project structure. Click [here](http
 This project is using BLOC state managment framework to manages events and states in the app. Click [here](https://bloclibrary.dev/) for more details regarding bloc.
 
 ### Running Demo:
-![](/screenshots/todo_demo.mp4)
+![](/screenshots/todo_demo.gif)
