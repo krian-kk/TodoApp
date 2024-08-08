@@ -15,6 +15,8 @@ To run this project make sure latest version of flutter sdk has been installed i
 
 ```
 git clone https://github.com/krian-kk/TodoApp.git
+cd todoapp
+flutter pub get
 ```
 
 ### Running the app
