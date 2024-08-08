@@ -40,14 +40,6 @@ flutter run
 
 ### Running Tests
 
-To run the test files project needs to generate the mock dependency files, to generate the mock files run the below command first:
-
-```
-flutter pub run build_runner build 
-```
-
-Above command is mandatory and needs to run any of the below test commands
-
 Run Unit tests for adding a task using below command:
 ```
 flutter test test/test_add_bloc.dart
@@ -66,6 +58,12 @@ flutter test test/test_mark_complete_task.dart
 Run Widget tests for task widget:
 ```
 flutter test test/widgets/test_widget_test.dart
+```
+
+(Optional) To run the test files project needs to generate the mock dependency files, to generate the mock files run the below command (This file is needed if mock.mock.dart is not present in test folder):
+
+```
+flutter pub run build_runner build 
 ```
 
 ### Architecture & Project Structure:
