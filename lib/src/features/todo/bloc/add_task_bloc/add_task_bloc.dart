@@ -8,7 +8,7 @@ part 'add_task_event.dart';
 part 'add_task_state.dart';
 
 class AddTaskBloc extends Bloc<AddTaskEvent, AddTaskState> {
-  final AddTask addTask;
+  final AddTaskUseCase addTask;
 
   AddTaskBloc({required this.addTask}) : super(AddTaskInitial()) {
     on<AddTaskEvent>(_onAddTask);

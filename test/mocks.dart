@@ -7,7 +7,7 @@ import 'package:todoapp/src/features/todo/domain/usecase/delete_usecase.dart';
 import 'package:todoapp/src/features/todo/domain/usecase/update_task_usecase.dart';
 
 @GenerateMocks([
-  AddTask,
+  AddTaskUseCase,
   DeleteTaskUseCase,
   UpdateTaskUseCase,
   TaskRepositoryImpl,

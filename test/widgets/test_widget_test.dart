@@ -28,7 +28,7 @@ void main() {
               create: (context) => GetTasksBloc(taskRepository)),
           BlocProvider(
               create: (context) =>
-                  AddTaskBloc(addTask: AddTask(taskRepository))),
+                  AddTaskBloc(addTask: AddTaskUseCase(taskRepository))),
           BlocProvider(
               create: (context) => DeleteTaskBloc(
                   deleteTask: DeleteTaskUseCase(taskRepository))),
