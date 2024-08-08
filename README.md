@@ -1,16 +1,58 @@
-# todoapp
+# Todoapp
 
-A Todo app
+In this Flutter project, user can add a new task, mark task as completed, delete the task and filter the tasks as Pending or Completed.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To run this project make sure latest version of flutter sdk has been installed in the system and run the following commands.
 
-A few resources to get you started if this is your first Flutter project:
+```
+git clone https://github.com/krian-kk/TodoApp.git
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Open the appropriate android emulator or ios simulator to run the project
+
+For Running in Android, use the instructions below:
+```
+flutter run
+
+```
+
+For Running in iOS, use the instructions below:
+
+To run the project in the iOS simulator, make sure that cocoapods is installed in the system and run the following commands
+```
+cd ios
+pod install
+flutter run
+```
+
+To run the test files project needs to generate the mock dependency files, to generate the mock files run the below command first:
+
+```
+flutter pub run build_runner build 
+```
+
+Above command is mandatory and needs to run any of the below test commands
+
+Run Unit tests for adding a task using below command:
+```
+flutter test test/test_add_bloc.dart
+```
+
+Run Unit tests for deleting a task using below command:
+```
+flutter test test/test_delete_task.dart
+```
+
+Run Unit tests for marking a task as completed using below command:
+```
+flutter test test/test_mark_complete_task.dart
+```
+
+Run Widget tests for task widget:
+```
+flutter test test/widgets/test_widget_test.dart
+```
+
