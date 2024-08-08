@@ -2,6 +2,8 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:todoapp/src/features/todo/domain/entities/task_model.dart';
 
+///TaskDBHelper: a database helper class to create, delete and update the tables.
+/// A singleton object named instance is used to access database instance.
 class TaskDBHelper {
   static final TaskDBHelper instance = TaskDBHelper._init();
 
