@@ -4,8 +4,8 @@ import 'package:todoapp/src/features/todo/domain/entities/task.dart';
 import 'package:todoapp/src/features/todo/domain/usecase/get_task_usecase.dart';
 
 part 'get_task_state.dart';
-part "get_task_event.dart";
 
+part "get_task_event.dart";
 
 class GetTasksBloc extends Bloc<GetTasksEvent, GetTasksState> {
   final GetTasks getTasksUseCase;
@@ -17,6 +17,7 @@ class GetTasksBloc extends Bloc<GetTasksEvent, GetTasksState> {
     on<GetTasksEvent>((event, emit) async {
       if (event is LoadTasksRequested) {
         final tasks = await getTasksUseCase.call(event.selectedFilter);
+        emit(UpdateTaskHeaderSuccess());
         emit(GetTasksSuccess(tasks));
       }
     });

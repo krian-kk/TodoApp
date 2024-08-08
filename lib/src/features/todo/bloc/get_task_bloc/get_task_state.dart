@@ -9,3 +9,7 @@ class GetTasksSuccess extends GetTasksState {
 
   GetTasksSuccess(this.tasks);
 }
+
+class UpdateTaskHeaderSuccess extends GetTasksState {
+  UpdateTaskHeaderSuccess();
+}
