@@ -31,7 +31,7 @@ jobs:
         run: flutter test
 
       - name: Build APK
-        run: flutter build apk --release
+        run: flutter build apk --debug
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v3
@@ -48,7 +48,7 @@ jobs:
       - name: Download APK Artifact
         uses: actions/download-artifact@v3
         with:
-          name: release-apk
+          name: debug-apk
 
       - name: Deploy to Firebase App Distribution
         env:
