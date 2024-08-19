@@ -55,7 +55,7 @@ jobs:
           FIREBASE_TOKEN: '1//0g1OmTS3kAH3nCgYIARAAGBASNwF-L9IrbyG_OcVf0mq8-g0qgjCZA2tldmoY5zyvGcwNHCWdNSZbH0js8iUrymzwgKMuV2o7uEo'
         run: |
           npm install -g firebase-tools
-          firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk \
+          firebase appdistribution:distribute build/app/outputs/flutter-apk/app-debug.apk \
             --app 1:301840111204:android:8d3ecaecdf7e5eb1a47171  \
             --groups testers
 
