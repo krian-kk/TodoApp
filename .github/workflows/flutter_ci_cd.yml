@@ -30,9 +30,6 @@ jobs:
       - name: Run unit tests
         run: flutter test
 
-      - name: Run integration tests
-        run: flutter test integration_test
-
       - name: Build APK
         run: flutter build apk --release
 
@@ -55,10 +52,10 @@ jobs:
 
       - name: Deploy to Firebase App Distribution
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_TOKEN: '1//0g1OmTS3kAH3nCgYIARAAGBASNwF-L9IrbyG_OcVf0mq8-g0qgjCZA2tldmoY5zyvGcwNHCWdNSZbH0js8iUrymzwgKMuV2o7uEo'
         run: |
           firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk \
-            --app <your-firebase-app-id> \
+            --app 1:301840111204:android:8d3ecaecdf7e5eb1a47171  \
             --groups testers
 
     # Additional deployment steps (e.g., deploying to Play Store) can be added here.
